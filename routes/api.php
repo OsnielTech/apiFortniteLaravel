@@ -21,3 +21,6 @@ Route::put('/students/{id}', function () {
 Route::delete('/students/{id}', function () {
     return 'Eliminando estudiante';
 });
+Route::deletenow('/students/{id}', function () {
+    return 'Eliminando estudiante';
+});
