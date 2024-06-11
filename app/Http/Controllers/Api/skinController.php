@@ -14,17 +14,23 @@ class skinController extends Controller
     public function index()
     {
 
-        $skins = Skin::all();
+         $skins = Skin::all();
 
-        if($skins ->empty()){
+        // if($skins ->empty()){
 
-            $data = [
-                'message' => 'No se encuentra ninguna skin',
-                'status' => 404
-            ];
-            return response()->json($data, 200);
-        }
-        return response()->json($skins, 200);
+        //     $data = [
+        //         'message' => 'No se encuentra ninguna skin',
+        //         'status' => 404
+        //     ];
+        //     return response()->json($data, 200);
+        // }
+        // return response()->json($skins, 200);
+        $data = [
+            'skin' => $skins,
+            'status' => 200
+        ];
+        return response()->json($data, 200);
+
     }
 
     public function store(Request $request){
