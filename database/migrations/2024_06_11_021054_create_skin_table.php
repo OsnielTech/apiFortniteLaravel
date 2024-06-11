@@ -11,14 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_student', function (Blueprint $table) {
+        Schema::create('skin', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('lastname');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('languaje');
-            $table->timestamps();
+            $table->string('nameSkin');
+            $table->string('seasonSkin');
+            $table->string('chapterSkin');
+            $table->string('setSkin');
+            $table->string('rarityLevelSkin');
+            $table->string('priceSkin');
+            $table->timestamps('');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_student');
+        Schema::dropIfExists('skin');
     }
 };

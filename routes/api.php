@@ -2,25 +2,21 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\skinController;
 
-Route::get('/students', function () {
-    return 'Obteniendo lista de estudiantes';
-});
-Route::get('/students/{id}', function () {
-    return 'Obteniendo estudiante';
-});
+Route::get('/skins', [skinController::class, 'index']);
 
-
-Route::post('/students', function () {
-    return 'Creando estudiante';
+Route::get('/skins/{id}', function () {
+    return 'Obteniendo skin';
 });
 
-Route::put('/students/{id}', function () {
-    return 'Actualizar estudiante';
+
+Route::post('/skins', [skinController::class, 'store'] );
+
+Route::put('/skins/{id}', function () {
+    return 'Actualizar skin';
 });
-Route::delete('/students/{id}', function () {
-    return 'Eliminando estudiante';
+Route::delete('/skins/{id}', function () {
+    return 'Eliminando skin';
 });
-Route::deletenow('/students/{id}', function () {
-    return 'Eliminando estudiante';
-});
+
